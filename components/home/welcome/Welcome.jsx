@@ -28,6 +28,16 @@ const Welcome = () => {
             onChange={() => {}}
             placeholder='Cari pekerjaan'/>
         </View>
+        
+
+        <TouchableOpacity style={styles.searchBtn} onPress={() => {}}>
+          <Image 
+            source={icons.search}
+            resizeMode='' 
+            style={styles.searchBtnImage}/>
+        </TouchableOpacity>
+
+        
       </View>
     </View>
   )
