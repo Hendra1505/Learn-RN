@@ -5,16 +5,11 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View>
-        <Text>
+        <Text style={styles.myText}>
           Another piece of Text guys
         </Text>
       </View>
-      <Text 
-        style={{
-          margin: 16,
-          borderWidth: 2,
-          borderColor: 'green',
-        }}>
+      <Text style={styles.myText}>
         This was a Text
       </Text>
       <StatusBar style="auto" />
@@ -28,5 +23,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+
+  myText: {
+    margin: 16,
+    padding: 16,
+    borderWidth: 2,
+    borderColor: 'blue',
   },
 });
