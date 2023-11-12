@@ -6,18 +6,23 @@ import {
   FlatList, 
   ActivityIndicator  
 } from 'react-native'
+import { router, useRouter } from 'expo-router';
 
 import { COLORS, SIZES } from '../../../constants'
 import PopularJobCard from '../../common/cards/popular/PopularJobCard'
-import { router, useRouter } from 'expo-router';
+import fetchApi from '../../../api/fetchApi';
+
+// styles
 import styles from './popularjobs.style'
 
 
 const Popularjobs = () => {
   const router = useRouter();
-  const isLoading = false;
-  const error = false;
-
+  const {data, isLoading, error} = fetchApi(
+    'search', {
+      query: 'Python',
+      num_pages : 1
+    })
   
   return (
     <View style={styles.container}>
@@ -36,7 +41,7 @@ const Popularjobs = () => {
           <ActivityIndicator size='large' colors={COLORS.primary} />
         ) : error ? (
           <Text>
-            Something went wrong
+            Mohon maaf ada kendala
           </Text>
         ) : (
           <FlatList 
